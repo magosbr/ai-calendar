@@ -4,11 +4,15 @@ services:
   app:
     build: .
     ports:
-      - "${APP_PORT}:${APP_PORT}"
+      - "${PORT}:${PORT}"
     depends_on:
       - postgres
     env_file:
       - .env
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: ["npx", "ts-node-dev", "--respawn", "src/web/server.ts"]
 
   postgres:
     image: postgres:14

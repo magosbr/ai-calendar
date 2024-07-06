@@ -14,11 +14,8 @@ COPY . .
 # Install TypeScript globally.
 RUN npm install -g typescript
 
-# Build the TypeScript code.
-RUN npm run build
-
 # Expose the port the app runs on.
 EXPOSE 3000
 
-# Run the application.
-CMD [ "node", "dist/index.js" ]
+# Run the application using ts-node-dev for live reload.
+CMD ["npx", "ts-node-dev", "--respawn", "src/web/server.ts"]
