@@ -5,29 +5,9 @@ services:
     build: .
     ports:
       - "${PORT}:${PORT}"
-    depends_on:
-      - postgres
     env_file:
       - .env
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     command: ["npx", "ts-node-dev", "--respawn", "src/web/server.ts"]
-
-  postgres:
-    image: postgres:14
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DATABASE}
-    ports:
-      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
-    volumes:
-      - .psqlrc:/root/.psqlrc:ro
-      - postgres:/var/lib/postgresql/data
-      - ./log:/root/log:cached
-    env_file:
-      - .env
-
-volumes:
-  postgres:
