@@ -1,11 +1,12 @@
 import express from 'express';
+import "dotenv/config";
 import bodyParser from 'body-parser';
 import { createEvent, getEvents, updateEvent, deleteEvent } from './api/controllers/CalendarController';
 import { validateRequest } from './api/middlewares/ValidationMiddleware';
 import { EventSchema } from './api/schemas/EventSchema';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
 
