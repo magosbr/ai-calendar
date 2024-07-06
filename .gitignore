@@ -1,5 +1,6 @@
 # Ignore ENV vars.
 .env
+credentials.json
 
 # Ignore IDE files
 /.idea
