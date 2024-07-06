@@ -10,7 +10,7 @@ import { getCurrentDateTool } from "../tools/GetCurrentDateTool";
 export const createCalendarAgent = async () => {
     Settings.llm = new OpenAI({
         apiKey: process.env.OPENAI_API_KEY,
-        model: "gpt-4",
+        model: "gpt-4o",
     });
 
     Settings.callbackManager.on("llm-tool-call", (event) => {
