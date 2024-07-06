@@ -24,7 +24,7 @@ export class GoogleCalendarRepository implements ICalendarRepository {
         const calendar = google.calendar({ version: 'v3', auth: authClient });
 
         const response = await calendar.events.insert({
-            calendarId: process.env.GOOGLE_CALENDAR_ID,
+            calendarId: process.env.GOOGLE_CALENDAR_ID || '',
             requestBody: event,
         });
 
@@ -40,7 +40,7 @@ export class GoogleCalendarRepository implements ICalendarRepository {
         const calendar = google.calendar({ version: 'v3', auth: authClient });
 
         const response = await calendar.events.list({
-            calendarId: process.env.GOOGLE_CALENDAR_ID,
+            calendarId: process.env.GOOGLE_CALENDAR_ID || '',
             timeMin: new Date(startDate).toISOString(),
             timeMax: new Date(endDate).toISOString(),
             singleEvents: true,
@@ -52,5 +52,32 @@ export class GoogleCalendarRepository implements ICalendarRepository {
         } else {
             throw new Error('No events found');
         }
+    }
+
+    async updateEvent(eventId: string, event: Event): Promise<string> {
+        const authClient = await this.auth.getClient();
+        const calendar = google.calendar({ version: 'v3', auth: authClient });
+
+        const response = await calendar.events.update({
+            calendarId: process.env.GOOGLE_CALENDAR_ID || '',
+            eventId: eventId,
+            requestBody: event,
+        });
+
+        if (response.data.htmlLink) {
+            return response.data.htmlLink;
+        } else {
+            throw new Error('Event update failed: no link returned');
+        }
+    }
+
+    async deleteEvent(eventId: string): Promise<void> {
+        const authClient = await this.auth.getClient();
+        const calendar = google.calendar({ version: 'v3', auth: authClient });
+
+        await calendar.events.delete({
+            calendarId: process.env.GOOGLE_CALENDAR_ID || '',
+            eventId: eventId,
+        });
     }
 }

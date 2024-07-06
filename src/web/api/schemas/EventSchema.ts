@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const eventSchema = z.object({
+export const EventSchema = z.object({
     summary: z.string(),
     location: z.string().optional(),
     description: z.string().optional(),

@@ -32,3 +32,28 @@ export const getEvents = async (req: Request, res: Response) => {
         res.status(500).send('Error fetching events.');
     }
 };
+
+export const updateEvent = async (req: Request, res: Response) => {
+    const { eventId } = req.params;
+    const event: Event = req.body;
+
+    try {
+        const eventLink = await calendarRepository.updateEvent(eventId, event);
+        res.status(200).send(`Event updated: ${eventLink}`);
+    } catch (error) {
+        console.error('Error updating event:', error);
+        res.status(500).send('Error updating event.');
+    }
+};
+
+export const deleteEvent = async (req: Request, res: Response) => {
+    const { eventId } = req.params;
+
+    try {
+        await calendarRepository.deleteEvent(eventId);
+        res.status(200).send('Event deleted');
+    } catch (error) {
+        console.error('Error deleting event:', error);
+        res.status(500).send('Error deleting event.');
+    }
+};
