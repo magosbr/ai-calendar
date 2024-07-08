@@ -15,7 +15,7 @@ COPY . .
 RUN npm install -g typescript
 
 # Expose the port the app runs on.
-EXPOSE 80
+EXPOSE 3000
 
 # Run the application using ts-node-dev for live reload.
 CMD ["npx", "ts-node-dev", "--respawn", "src/web/server.ts"]
