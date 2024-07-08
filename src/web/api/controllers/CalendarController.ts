@@ -5,19 +5,7 @@ import { Event } from '../../../core/models/Event';
 const calendarRepository = new GoogleCalendarRepository();
 
 export const createEvent = async (req: Request, res: Response) => {
-    const event: Event = {
-        summary: 'Test Event',
-        location: 'Brasilia, Brazil',
-        description: 'A hardcoded event for testing purposes.',
-        start: {
-            dateTime: '2024-06-29T10:00:00-03:00',
-            timeZone: 'America/Sao_Paulo',
-        },
-        end: {
-            dateTime: '2024-06-29T11:00:00-03:00',
-            timeZone: 'America/Sao_Paulo',
-        },
-    };
+    const event: Event = req.body;
 
     try {
         const eventLink = await calendarRepository.createEvent(event);

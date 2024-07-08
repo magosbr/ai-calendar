@@ -1,7 +1,7 @@
 export interface Event {
     summary: string;
-    location: string;
-    description: string;
+    location?: string;
+    description?: string;
     start: {
         dateTime: string;
         timeZone: string;
