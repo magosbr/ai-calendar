@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "Error: no test specified",
-    "start": "ts-node src/web/server.ts",
+    "start": "node dist/web/server.js",
     "build": "tsc"
   },
   "keywords": [],
