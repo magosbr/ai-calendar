@@ -8,7 +8,7 @@ credentials.json
 
 # Ignore installed files
 /node_modules
-
+/dist
 
 
 
