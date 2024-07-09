@@ -50,10 +50,8 @@ export const createEventSchema: JSONSchemaType<Event> = {
     additionalProperties: false
 };
 
-export const createEventTool = () => {
-    return FunctionTool.from(createEvent, {
+export const createEventTool = FunctionTool.from(createEvent, {
         name: "createEvent",
         description: "create Event in Agenda",
         parameters: createEventSchema
-    })
-}
+});

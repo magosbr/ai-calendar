@@ -18,7 +18,7 @@ export const createCalendarAgent = async () => {
         console.log(event.detail.payload);
     });
 
-    const tools = [
+    const tools: BaseToolWithCall[] = [
         createEventTool,
         getEventsTool,
         updateEventTool,

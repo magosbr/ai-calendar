@@ -25,10 +25,8 @@ const deleteEventSchema: JSONSchemaType<{ eventId: string }> = {
     additionalProperties: false
 };
 
-export const deleteEventTool = () => {
-    return FunctionTool.from(deleteEvent, {
+export const deleteEventTool = FunctionTool.from(deleteEvent, {
         name: "deleteEvent",
         description: "Deletes an event from the Agenda",
         parameters: deleteEventSchema
-    })
-}
+    });

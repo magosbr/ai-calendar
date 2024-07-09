@@ -52,10 +52,8 @@ const getEventsSchema: JSONSchemaType<{ startDate: string; endDate: string }> = 
     additionalProperties: false
 };
 
-export const getEventsTool = () => {
-    return FunctionTool.from(getEvents, {
+export const getEventsTool = FunctionTool.from(getEvents, {
         name: "getEvents",
         description: "get Events in Agenda given a date range",
         parameters: getEventsSchema
-    })
-}
+    });

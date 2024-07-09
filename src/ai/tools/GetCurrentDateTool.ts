@@ -22,10 +22,8 @@ const emptySchema: JSONSchemaType<{}> = {
     additionalProperties: false
 };
 
-export const getCurrentDateTool = () => {
-    return FunctionTool.from(getCurrentDate, {
+export const getCurrentDateTool = FunctionTool.from(getCurrentDate, {
         name: "getCurrentDate",
         description: "get current date and time in Brazilian format DAY/MONTH/YEAR",
         parameters: emptySchema
-    })
-}
+    });

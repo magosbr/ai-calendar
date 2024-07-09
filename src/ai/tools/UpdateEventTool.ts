@@ -29,10 +29,8 @@ const updateEventSchema: JSONSchemaType<{ eventId: string; event: Event }> = {
     additionalProperties: false
 };
 
-export const updateEventTool = () => {
-    return FunctionTool.from(updateEvent, {
+export const updateEventTool = FunctionTool.from(updateEvent, {
         name: "updateEvent",
         description: "update an existing event in the Agenda",
         parameters: updateEventSchema
     })
-}
