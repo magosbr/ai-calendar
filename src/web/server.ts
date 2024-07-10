@@ -7,7 +7,7 @@ import { validateRequest } from './api/middlewares/ValidationMiddleware';
 import { EventSchema } from './api/schemas/EventSchema';
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
@@ -24,4 +24,12 @@ app.get('*', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
+});
+
+process.on('uncaughtException', (error) => {
+    console.error('Uncaught Exception:', error);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
