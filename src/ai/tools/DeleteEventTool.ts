@@ -1,8 +1,8 @@
 import {
     GoogleCalendarRepository
-} from "../../core/implementations/google_calendar/GoogleCalendarRepository";
-import {BaseToolWithCall, FunctionTool, JSONValue} from "llamaindex";
-import { JSONSchemaType } from "ajv";
+} from '../../core/implementations/google_calendar/GoogleCalendarRepository';
+import {BaseToolWithCall, FunctionTool, JSONValue} from 'llamaindex';
+import { JSONSchemaType } from 'ajv';
 
 const deleteEvent = async (parameters: { eventId: string }): Promise<JSONValue> => {
     const calendarRepository = new GoogleCalendarRepository();
@@ -17,16 +17,16 @@ const deleteEvent = async (parameters: { eventId: string }): Promise<JSONValue> 
 };
 
 const deleteEventSchema: JSONSchemaType<{ eventId: string }> = {
-    type: "object",
+    type: 'object',
     properties: {
-        eventId: { type: "string", description: "ID of the event to be deleted" }
+        eventId: { type: 'string', description: 'ID of the event to be deleted' }
     },
-    required: ["eventId"],
+    required: ['eventId'],
     additionalProperties: false
 };
 
 export const deleteEventTool = FunctionTool.from(deleteEvent, {
-        name: "deleteEvent",
-        description: "Deletes an event from the Agenda",
+        name: 'deleteEvent',
+        description: 'Deletes an event from the Agenda',
         parameters: deleteEventSchema
     });

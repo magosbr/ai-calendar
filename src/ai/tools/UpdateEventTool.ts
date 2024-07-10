@@ -1,10 +1,10 @@
-import {BaseToolWithCall, FunctionTool, JSONValue} from "llamaindex";
-import { JSONSchemaType } from "ajv";
-import { Event } from "../../core/models/Event";
-import { createEventSchema } from "./CreateEventTool";
+import {BaseToolWithCall, FunctionTool, JSONValue} from 'llamaindex';
+import { JSONSchemaType } from 'ajv';
+import { Event } from '../../core/models/Event';
+import { createEventSchema } from './CreateEventTool';
 import {
     GoogleCalendarRepository
-} from "../../core/implementations/google_calendar/GoogleCalendarRepository";
+} from '../../core/implementations/google_calendar/GoogleCalendarRepository';
 
 const updateEvent = async (parameters: { eventId: string, event: Event }): Promise<JSONValue> => {
     const calendarRepository = new GoogleCalendarRepository();
@@ -20,17 +20,17 @@ const updateEvent = async (parameters: { eventId: string, event: Event }): Promi
 };
 
 const updateEventSchema: JSONSchemaType<{ eventId: string; event: Event }> = {
-    type: "object",
+    type: 'object',
     properties: {
-        eventId: { type: "string", description: "ID of the event to be updated" },
+        eventId: { type: 'string', description: 'ID of the event to be updated' },
         event: createEventSchema
     },
-    required: ["eventId", "event"],
+    required: ['eventId', 'event'],
     additionalProperties: false
 };
 
 export const updateEventTool = FunctionTool.from(updateEvent, {
-        name: "updateEvent",
-        description: "update an existing event in the Agenda",
+        name: 'updateEvent',
+        description: 'update an existing event in the Agenda',
         parameters: updateEventSchema
-    })
+    });

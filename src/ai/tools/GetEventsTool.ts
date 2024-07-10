@@ -1,9 +1,9 @@
-import {BaseToolWithCall, FunctionTool, JSONValue} from "llamaindex";
-import { JSONSchemaType } from "ajv";
+import {BaseToolWithCall, FunctionTool, JSONValue} from 'llamaindex';
+import { JSONSchemaType } from 'ajv';
 import {
     GoogleCalendarRepository
-} from "../../core/implementations/google_calendar/GoogleCalendarRepository";
-import { Event } from "../../core/models/Event";
+} from '../../core/implementations/google_calendar/GoogleCalendarRepository';
+import { Event } from '../../core/models/Event';
 
 const getEvents = async ({ startDate, endDate }: { startDate: string, endDate: string }): Promise<JSONValue> => {
     const calendarRepository = new GoogleCalendarRepository();
@@ -42,18 +42,18 @@ const eventToJson = (event: Event): JSONObject => {
 interface JSONObject { [key: string]: JSONValue; }
 
 const getEventsSchema: JSONSchemaType<{ startDate: string; endDate: string }> = {
-    type: "object",
+    type: 'object',
     properties: {
-        startDate: { type: "string", description: "Start date of the events in ISO 8601 format" },
-        endDate: { type: "string", description: "End date of the events in ISO 8601 format " +
-                "must be at least one day more than start date" }
+        startDate: { type: 'string', description: 'Start date of the events in ISO 8601 format' },
+        endDate: { type: 'string', description: 'End date of the events in ISO 8601 format ' +
+                'must be at least one day more than start date' }
     },
-    required: ["startDate", "endDate"],
+    required: ['startDate', 'endDate'],
     additionalProperties: false
 };
 
 export const getEventsTool = FunctionTool.from(getEvents, {
-        name: "getEvents",
-        description: "get Events in Agenda given a date range",
+        name: 'getEvents',
+        description: 'get Events in Agenda given a date range',
         parameters: getEventsSchema
     });

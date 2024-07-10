@@ -1,5 +1,5 @@
 import express from 'express';
-import "dotenv/config";
+import 'dotenv/config';
 import bodyParser from 'body-parser';
 import { createEvent, getEvents, updateEvent, deleteEvent } from './api/controllers/CalendarController';
 import { validateRequest } from './api/middlewares/ValidationMiddleware';

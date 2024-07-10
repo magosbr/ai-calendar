@@ -1,5 +1,5 @@
-import {BaseToolWithCall, FunctionTool, JSONValue} from "llamaindex";
-import { JSONSchemaType } from "ajv";
+import {BaseToolWithCall, FunctionTool, JSONValue} from 'llamaindex';
+import { JSONSchemaType } from 'ajv';
 
 const getCurrentDate = async (): Promise<JSONValue> => {
     const currentDate = new Date();
@@ -17,13 +17,13 @@ const getCurrentDate = async (): Promise<JSONValue> => {
 };
 
 const emptySchema: JSONSchemaType<{}> = {
-    type: "object",
+    type: 'object',
     properties: {},
     additionalProperties: false
 };
 
 export const getCurrentDateTool = FunctionTool.from(getCurrentDate, {
-        name: "getCurrentDate",
-        description: "get current date and time in Brazilian format DAY/MONTH/YEAR",
+        name: 'getCurrentDate',
+        description: 'get current date and time in Brazilian format DAY/MONTH/YEAR',
         parameters: emptySchema
     });
