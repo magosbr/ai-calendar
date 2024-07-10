@@ -1,7 +1,7 @@
 import {
     GoogleCalendarRepository
 } from '../../core/implementations/google_calendar/GoogleCalendarRepository';
-import {BaseToolWithCall, FunctionTool, JSONValue} from 'llamaindex';
+import { FunctionTool, JSONValue} from 'llamaindex';
 import { JSONSchemaType } from 'ajv';
 
 const deleteEvent = async (parameters: { eventId: string }): Promise<JSONValue> => {

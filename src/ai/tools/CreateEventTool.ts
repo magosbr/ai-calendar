@@ -1,4 +1,4 @@
-import {BaseToolWithCall, FunctionTool, JSONValue} from 'llamaindex';
+import { FunctionTool, JSONValue} from 'llamaindex';
 import { Event } from '../../core/models/Event';
 import {
     GoogleCalendarRepository

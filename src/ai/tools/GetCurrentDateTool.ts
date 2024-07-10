@@ -1,4 +1,4 @@
-import {BaseToolWithCall, FunctionTool, JSONValue} from 'llamaindex';
+import { FunctionTool, JSONValue} from 'llamaindex';
 import { JSONSchemaType } from 'ajv';
 
 const getCurrentDate = async (): Promise<JSONValue> => {
