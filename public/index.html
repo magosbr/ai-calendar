@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agendaqui.co - Your AI Assistant for Google Agenda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #2c3e50; /* Primary Text Color */
+            background-color: #f4f7f9; /* Background Color */
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero {
+            background: #ffffff; /* Background Color */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+        .cta-button {
+            background-color: #1abc9c; /* Primary Button Color */
+            color: #ffffff; /* Button Text Color */
+        }
+        .input-group .form-control {
+            border-top-left-radius: 0.375rem;
+            border-bottom-left-radius: 0.375rem;
+        }
+        .input-group .btn {
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem;
+        }
+        section {
+            padding: 60px 0;
+        }
+        footer {
+            background: #2c3e50; /* Footer Background Color */
+            color: #ffffff; /* Footer Text Color */
+            padding: 60px 0;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+        .footer-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<!-- Hero Section -->
+<section id="hero" class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4">Effortless Schedule Management with AI Assistance</h1>
+                <p class="lead">Say goodbye to manual scheduling and let our AI assistant manage your Google Agenda via WhatsApp.</p>
+                <div class="input-group my-4">
+                    <input type="email" class="form-control" placeholder="Enter your email" aria-label="Enter your email">
+                    <button class="btn btn-primary cta-button" type="button">Apply for Beta</button>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="https://via.placeholder.com/600x400?text=AI+Assistant+for+Google+Agenda" alt="AI assistant on WhatsApp">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Problem Statement -->
+<section id="problem" class="problem bg-white text-center fade-in">
+    <div class="container">
+        <h2 class="display-5">Tired of Constantly Checking Google Agenda?</h2>
+        <p class="lead">Manually managing and checking schedules in Google Agenda can be a hassle. But it doesn't have to be.</p>
+        <img src="https://via.placeholder.com/600x300?text=Frustrated+with+Manual+Scheduling" alt="Frustrated person with calendar">
+    </div>
+</section>
+
+<!-- Key Features -->
+<section id="features" class="features bg-white text-center fade-in">
+    <div class="container">
+        <h2 class="display-5">Key Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-block">
+                    <h3>Automated Agenda Management</h3>
+                    <p>The AI handles creation, updates, and more.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-block">
+                    <h3>Multimodal Interaction</h3>
+                    <p>Communicate via text, audio, and images.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-block">
+                    <h3>Real-time Notifications</h3>
+                    <p>Receive instant updates and reminders through WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Solution Introduction -->
+<section id="solution" class="solution bg-light text-center fade-in">
+    <div class="container">
+        <h2 class="display-5">Say Hello to agendaqui.co</h2>
+        <p class="lead">Our AI assistant simplifies schedule management by handling tasks via WhatsApp.</p>
+        <img src="https://via.placeholder.com/600x300?text=WhatsApp+Chatbot+Interface" alt="WhatsApp chatbot interface">
+    </div>
+</section>
+
+<!-- How It Works -->
+<section id="how-it-works" class="how-it-works bg-white text-center fade-in">
+    <div class="container">
+        <h2 class="display-5">How It Works</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="step">
+                    <h3>1. Sign Up</h3>
+                    <p>Quick and easy registration.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step">
+                    <h3>2. Connect Your Agenda</h3>
+                    <p>Link your Google Agenda with the AI assistant.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step">
+                    <h3>3. Start Scheduling</h3>
+                    <p>Begin managing your agenda through WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq bg-light text-center fade-in">
+    <div class="container">
+        <h2 class="display-5">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                        How do I sign up?
+                    </button>
+                </h2>
+                <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Follow the sign-up process to get started quickly.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                        Is my data secure?
+                    </button>
+                </h2>
+                <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, we prioritize your data security with advanced measures.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                        Can I try it for free?
+                    </button>
+                </h2>
+                <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, we offer a free trial for new users.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                        What platforms are supported?
+                    </button>
+                </h2>
+                <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Currently, we support integration with Google Agenda via WhatsApp.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container">
+        <nav class="footer-nav mb-3">
+            <a href="#hero">Home</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="contact-info">
+            <p>Email: support@agendaqui.co</p>
+            <p>Phone: +123456789</p>
+            <p>Address: 123 AI Street, Tech City</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Add fade-in effect to sections
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    document.querySelectorAll('.fade-in').forEach((section) => {
+        observer.observe(section);
+    });
+</script>
+</body>
+</html>

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "node dist/src/web/server.js",
-    "build": "tsc",
+    "build": "tsc && cp -R public dist/",
     "lint": "eslint '**/*.{js,mjs,cjs,ts}'",
     "lint:fix": "eslint '**/*.{js,mjs,cjs,ts}' --fix"
   },
