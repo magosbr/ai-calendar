@@ -6,7 +6,7 @@ import axios from 'axios';
 import { createEvent, getEvents, updateEvent, deleteEvent } from './api/controllers/CalendarController';
 import { validateRequest } from './api/middlewares/ValidationMiddleware';
 import { EventSchema } from './api/schemas/EventSchema';
-import { createCalendarAgent } from '../ai/agents/CalendarAgent';
+import { createCalendarAgent } from '@agents/CalendarAgent';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
