@@ -1,6 +1,6 @@
 import { google, calendar_v3 } from 'googleapis';
-import { ICalendarRepository } from '../../repositories/ICalendarRepository';
-import { Event } from '../../models/Event';
+import { ICalendarRepository } from '@repositories/ICalendarRepository';
+import { Event } from '@models/Event';
 import 'dotenv/config';
 
 const SCOPES = ['https://www.googleapis.com/auth/calendar'];

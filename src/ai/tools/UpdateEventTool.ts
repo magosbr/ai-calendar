@@ -1,10 +1,10 @@
 import { FunctionTool, JSONValue} from 'llamaindex';
 import { JSONSchemaType } from 'ajv';
-import { Event } from '../../core/models/Event';
+import { Event } from '@models/Event';
 import { createEventSchema } from './CreateEventTool';
 import {
     GoogleCalendarRepository
-} from '../../core/implementations/google_calendar/GoogleCalendarRepository';
+} from '@implementations/google_calendar/GoogleCalendarRepository';
 
 const updateEvent = async (parameters: { eventId: string, event: Event }): Promise<JSONValue> => {
     const calendarRepository = new GoogleCalendarRepository();

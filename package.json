@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node dist/src/web/server.js",
+    "start": "node bootstrap.js",
     "build": "tsc && cp -R public dist/",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "dev": "nodemon src/web/server.ts"
+    "dev": "nodemon -r tsconfig-paths/register src/web/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "express": "^4.19.2",
     "googleapis": "^140.0.1",
     "llamaindex": "^0.4.6",
+    "tsconfig-paths": "^4.2.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
