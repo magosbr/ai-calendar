@@ -1,1 +1,1 @@
-web: node dist/src/web/server.js
+web: node bootstrap.js
