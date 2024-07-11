@@ -1,4 +1,4 @@
-import { Event } from '@models/Event';
+import { Event } from '../models/Event';
 
 export interface ICalendarRepository {
     createEvent(event: Event): Promise<string>;
