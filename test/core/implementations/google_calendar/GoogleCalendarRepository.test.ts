@@ -1,6 +1,6 @@
 import { google } from 'googleapis';
-import { GoogleCalendarRepository } from '../../../../src/core/implementations/google_calendar/GoogleCalendarRepository';
-import { Event } from '../../../../src/core/models/Event';
+import { GoogleCalendarRepository } from '@implementations/google_calendar/GoogleCalendarRepository';
+import { Event } from '@models/Event';
 
 jest.mock('googleapis', () => {
     const mAuth = {
