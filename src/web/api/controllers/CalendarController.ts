@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { GoogleCalendarRepository } from '@implementations/google_calendar/GoogleCalendarRepository';
-import { Event } from '@models/Event';
+import { GoogleCalendarRepository } from '../../../core/implementations/google_calendar/GoogleCalendarRepository';
+import { Event } from '../../../core/models/Event';
 
 const calendarRepository = new GoogleCalendarRepository();
 

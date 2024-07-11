@@ -1,6 +1,6 @@
 import { stdin as input, stdout as output } from 'node:process';
 import readline from 'node:readline/promises';
-import { createCalendarAgent } from '@agents/CalendarAgent';
+import { createCalendarAgent } from './agents/CalendarAgent';
 
 async function main() {
     const agent = await createCalendarAgent();
