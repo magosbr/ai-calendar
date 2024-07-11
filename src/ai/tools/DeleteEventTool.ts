@@ -1,6 +1,6 @@
 import {
     GoogleCalendarRepository
-} from '../../core/implementations/google_calendar/GoogleCalendarRepository';
+} from '@implementations/google_calendar/GoogleCalendarRepository';
 import { FunctionTool, JSONValue} from 'llamaindex';
 import { JSONSchemaType } from 'ajv';
 

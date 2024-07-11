@@ -2,8 +2,8 @@ import { FunctionTool, JSONValue} from 'llamaindex';
 import { JSONSchemaType } from 'ajv';
 import {
     GoogleCalendarRepository
-} from '../../core/implementations/google_calendar/GoogleCalendarRepository';
-import { Event } from '../../core/models/Event';
+} from '@implementations/google_calendar/GoogleCalendarRepository';
+import { Event } from '@models/Event';
 
 const getEvents = async ({ startDate, endDate }: { startDate: string, endDate: string }): Promise<JSONValue> => {
     const calendarRepository = new GoogleCalendarRepository();
